@@ -1,7 +1,7 @@
 ---
-title: '[Blog] time series- Jupyter_Notebook_사용_기본설정'
+title: '[time series] Jupyter_Notebook_사용_기본설정'
 categories:
-    - Blog
+    - time series
 
 tag:
     - Jupyter Notebook
