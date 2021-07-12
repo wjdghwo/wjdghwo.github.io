@@ -4,19 +4,19 @@
 
 
 /* Colors */
-$background-color: #fbf7ff !default;
-$text-color: #252533 !default;
-$muted-text-color: #37375c !default;
-$primary-color: #444463 !default;
-$border-color: mix(#fff, #393e46, 75%) !default;
+$background-color: #3c3b3b !default;
+$text-color: #dedede !default;
+$muted-text-color: #e0bc81 !default;
+$primary-color: #faf9d8 !default;
+$border-color: mix(#fff, #3c3b3b, 75%) !default;
 $footer-background-color: $primary-color !default;
-$link-color: #62497a !default;
+$link-color: #e0bc81 !default;
 $masthead-link-color: $text-color !default;
 $masthead-link-color-hover: $text-color !default;
 $navicon-link-color-hover: mix(#fff, $text-color, 80%) !default;
 
 .page__footer {
-  color: #2e2e33 !important; // override
+  color: #3c3b3b !important; // override
 }
 
 .page__footer-follow .social-icons .svg-inline--fa {
