@@ -1,3 +1,16 @@
+---
+title: '[Blog] time series- Jupyter_Notebook_사용_기본설정'
+categories:
+    - Blog
+
+tag:
+    - Jupyter Notebook
+    - time series
+
+last_modified_at: 2021-07-12T23:00:00+09:00
+toc: true
+---
+
 # **Python**
 - 간결하고 쉬운 컴퓨터와의 소통언어
 - 데이터분석과 머신러닝을 위한 수많은 라이브러리를 포함
