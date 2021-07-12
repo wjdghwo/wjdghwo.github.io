@@ -3,7 +3,7 @@ permalink: /about/
 title: "About"
 excerpt: "About Me"
 search: true
-last_modified_at: 2020-01-23T13:00:00+09:00
+last_modified_at: 2021-07-21T13:00:00+09:00
 toc: true
 
 --- 
@@ -19,21 +19,20 @@ padding: 5px;
 "></center>
 
 
-* NAME : JiWon, Hyeon
-* MAJOR : Computer Science Engineering
+* NAME : Hojae, Jeong
+* MAJOR : Statistics
 
-## Career & Activities
- - Undergraduate resercher at Embedded System LAB (2018.06 ~ 2020.12)
- - LikeLion 7th @SCH (2019.03 ~ 2019.12)
+## Education & Activities
+ - B.S. Pusan National University,  Busan, South Korea (2016.3 ~ )
 
 ## Current Interest
  * Bigdata
- * Android Applicaiton 
- * Web Development
- * Internet of Things
+ * Data Analysis
+ * Art
+ * Baseball
 
 ## Contact
- * Email : zlone1208@gmail.com
- * Git : [https://github.com/Hyeonjiwon](https://github.com/Hyeonjiwon)
- * Blog : [https://hyeonjiwon.github.io/](https://hyeonjiwon.github.io/)
+ * Email : aodekf2005@naver.com
+ * Git : [https://github.com/wjdghwo](https://github.com/wjdghwo)
+ * Blog : [https://wjdghwo.github.io/](https://wjdghwo.github.io/)
 
