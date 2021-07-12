@@ -109,7 +109,7 @@ analytics:
 author:
   name             : "Jeong Hojae"
   avatar           : "/assets/img/me.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **good** person."
+  bio              : "I am a **good** person."
   location         : "South Korea"
   email            : 
   links:
