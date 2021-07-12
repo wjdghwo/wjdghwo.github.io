@@ -19,7 +19,7 @@ locale                   : "en-US"
 title                    : "Jeong Hojae's DevLog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Hyeon Jiwon"
+name                     : "Jeong Hojae"
 description              : "Learning to analyze Data Analysis"
 url                      : "https://wjdghwo.github.io" # the base hostname & protocol for your site e.g. 
 baseurl                  : # the subpath of your site, e.g. "/blog"
