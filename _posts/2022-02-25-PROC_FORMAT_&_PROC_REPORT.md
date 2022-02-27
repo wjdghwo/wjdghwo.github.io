@@ -1,3 +1,15 @@
+---
+title: '[SAS] PROC_FORMAT_&_PROC_REPORT'
+categories:
+    - SAS
+
+tag:
+    - SAS
+
+last_modified_at: 2022-02-25T23:30:00+09:00
+toc: true
+---
+
 # PROC FORMAT
 - 변수에 대한 Informats과 Formats을 직접 정의할 수 있게 해주는 프로시저
 - Informats은 Raw data 값을 읽고 저장, Formats은 산출 되는 변수 값들을 정의
