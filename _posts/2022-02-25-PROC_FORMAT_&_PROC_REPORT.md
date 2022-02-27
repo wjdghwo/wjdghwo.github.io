@@ -29,113 +29,113 @@ RUN;
     - PROC FORMAT 뒤
     - 각 세트에 대한 마지막 레이블 할당 후
     - RUN 뒤
-- 예시
-    - 개별 값에 대한 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE LIKERT_SEVEN
-        1   = "Strongly Disagree"
-        2   = "Disagree"
-        3   = "Slightly Disagree"
-        4   = "Neither Agree nor Disagree"
-        5   = "Slightly Agree"
-        6   = "Agree"
-        7   = "Strongly Agree";
-    RUN;                   
-    ```
-    - 둘 이상의 데이터 값에 적용되는 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE LIKERT7_A
-        1,2,3   = "Disagree"
-        4       = "Neither Agree nor Disagree"
-        5,6,7   = "Agree"
-    RUN;           
-    ```
-    - 값의 범위를 사용해 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE LIKERT7_B
-        1-3     = "Disagree"
-        4       = "Neither Agree nor Disagree"
-        5-7     = "Agree";
-    RUN;              
-    ```
-    - LOW, HIGH, 부등호를 사용해 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE INCOME
-        LOW   -< 20000 = "Low"
-        20000 -< 60000 = "Middle"
-        60000 - HIGH   = "High";
-    RUN;           
-    ```
-    - OTHER를 사용해 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE RACE
-        1     = "White"
-        2     = "Black"
-        OTHER = "Other";
-    RUN;        
-    ```
-    - 문자 변수에 대해 Label 할당
-    ```
-    PROC FORMAT;
-        VALUE $GENDERLABEL
-        "M"   = "Male"
-        "F"   = "Female";
-    RUN;       
-    ```
-    - 결측치에 대해 FORMAT 할당
-    '''
-    PROC FORMAT;
-        VALUE MYFMT .='N/A' other=[5.1];
-    RUN;
-    '''
-    - 24시간 형식을 00:00:01–24:00:00으로 변경
-    '''
-    PROC FORMAT;
-        PICTURE  HOURS (default=19)
-            other='%Y-%0m-%0d %0H:%0M:%0S' (datatype=datetime_util);
-    RUN;
-    '''
-    - 데이터 확인
-    ```
-    PROC FORMAT;
-        VALUE FMTMARRIED
-        0     = "NO"
-        1     = "YES";
-    RUN; 
-    ```
-    ```
-    PROC PRING DATA = SURVEY;
-        VAR SUBJECT MARRIED GENDER;
-        FORMAT MARRIED FMTMARRIED.;
-    RUN;    
-    ```
-    - 데이터 저장
-    ```
-    PROC FORMAT;
-        VALUE GENDERCODE
-        0 = 'Male'
-        1 = 'Female';
-        VALUE ATHLETECODE
-        0 = 'Non-athlete'
-        1 = 'Athlete';
-        VALUE SMOKINGCODE
-        0 = 'Nonsmoker'
-        1 = 'Past smoker'
-        2 = 'Current smoker';
-    RUN;  
-    ```
-    ```
-    DATA sample_formatted2;
-        SET sample;
-        FORMAT gender GENDERCODE. athlete ATHLETECODE. smoking SMOKINGCODE.;
-    RUN;
-    ```
-    - GENDERCODE.에서 마침표가 오는 이유는 변수가 아닌 FORMAT이라는 표시이다.
+## 예시
+### 개별 값에 대한 Label 할당
+```
+PROC FORMAT;
+    VALUE LIKERT_SEVEN
+    1   = "Strongly Disagree"
+    2   = "Disagree"
+    3   = "Slightly Disagree"
+    4   = "Neither Agree nor Disagree"
+    5   = "Slightly Agree"
+    6   = "Agree"
+    7   = "Strongly Agree";
+RUN;                   
+```
+### 둘 이상의 데이터 값에 적용되는 Label 할당
+```
+PROC FORMAT;
+    VALUE LIKERT7_A
+    1,2,3   = "Disagree"
+    4       = "Neither Agree nor Disagree"
+    5,6,7   = "Agree"
+RUN;           
+```
+### 값의 범위를 사용해 Label 할당
+```
+PROC FORMAT;
+    VALUE LIKERT7_B
+    1-3     = "Disagree"
+    4       = "Neither Agree nor Disagree"
+    5-7     = "Agree";
+RUN;              
+```
+### LOW, HIGH, 부등호를 사용해 Label 할당
+```
+PROC FORMAT;
+    VALUE INCOME
+    LOW   -< 20000 = "Low"
+    20000 -< 60000 = "Middle"
+    60000 - HIGH   = "High";
+RUN;           
+```
+### OTHER를 사용해 Label 할당
+```
+PROC FORMAT;
+    VALUE RACE
+    1     = "White"
+    2     = "Black"
+    OTHER = "Other";
+RUN;        
+```
+### 문자 변수에 대해 Label 할당
+```
+PROC FORMAT;
+    VALUE $GENDERLABEL
+    "M"   = "Male"
+    "F"   = "Female";
+RUN;       
+```
+### 결측치에 대해 FORMAT 할당
+'''
+PROC FORMAT;
+    VALUE MYFMT .='N/A' other=[5.1];
+RUN;
+'''
+### 24시간 형식을 00:00:01–24:00:00으로 변경
+'''
+PROC FORMAT;
+    PICTURE  HOURS (default=19)
+        other='%Y-%0m-%0d %0H:%0M:%0S' (datatype=datetime_util);
+RUN;
+'''
+### 데이터 확인
+```
+PROC FORMAT;
+    VALUE FMTMARRIED
+    0     = "NO"
+    1     = "YES";
+RUN; 
+```
+```
+PROC PRING DATA = SURVEY;
+    VAR SUBJECT MARRIED GENDER;
+    FORMAT MARRIED FMTMARRIED.;
+RUN;    
+```
+### 데이터 저장
+```
+PROC FORMAT;
+    VALUE GENDERCODE
+    0 = 'Male'
+    1 = 'Female';
+    VALUE ATHLETECODE
+    0 = 'Non-athlete'
+    1 = 'Athlete';
+    VALUE SMOKINGCODE
+    0 = 'Nonsmoker'
+    1 = 'Past smoker'
+    2 = 'Current smoker';
+RUN;  
+```
+```
+DATA sample_formatted2;
+    SET sample;
+    FORMAT gender GENDERCODE. athlete ATHLETECODE. smoking SMOKINGCODE.;
+RUN;
+```
+- GENDERCODE.에서 마침표가 오는 이유는 변수가 아닌 FORMAT이라는 표시이다.
 
 
 
@@ -168,8 +168,8 @@ PROC REPORT<options>; /* 요약, 세부 보고서 생성 */
 
 
 
-- 예시
-- 변수 선택 및 요약 생성
+## 예시
+### 변수 선택 및 요약 생성
 ```
 libname proclib 'SAS-library';
 data grocery;
@@ -219,7 +219,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex01.png?locale=en)
 
-- 보고서 행 순서 지정
+### 보고서 행 순서 지정
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -238,7 +238,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex02.png?locale=en)
 
-- 별칭을 사용하여 동일한 변수에 대한 여러 통계 값 얻기
+### 별칭을 사용하여 동일한 변수에 대한 여러 통계 값 얻기
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -272,7 +272,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex03.png?locale=en)
 
-- 하나의 변수에 대한 여러 통계값 표시
+### 하나의 변수에 대한 여러 통계값 표시
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -287,7 +287,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex04.png?locale=en)
 
-- 여러 관찰값들을 보고서의 한 행으로 통합
+### 여러 관찰값들을 보고서의 한 행으로 통합
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -316,7 +316,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex05.png?locale=en)
 
-- 변수의 각 값에 대한 열 생성
+### 변수의 각 값에 대한 열 생성
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -352,7 +352,7 @@ run;
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex06.png?locale=en)
 
 
-- 각 페이지에 사용자 정의 요약 작성
+### 각 페이지에 사용자 정의 요약 작성
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -394,7 +394,7 @@ proc report data=grocery;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex07.png?locale=en)
 
-- 백분율 계산
+### 백분율 계산
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -429,11 +429,11 @@ run;
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex08.png?locale=en)
 
 
-- 결측치 처리
+### 결측치 처리
     - proc report에서 결측치가 존재할 때 기본 옵션은 결측치를 제외하고 계산 및 출력을 한다.
     - 이때 결측치를 포함하고 싶으면 (그룹핑과 같은 곳) ```proc report data=grocmiss missing;``` 처럼 `missing`옵션을 사용한다.
 
-- 출력 데이터 세트 생성 및 계산된 변수 저장
+### 출력 데이터 세트 생성 및 계산된 변수 저장
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -467,7 +467,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex10.png?locale=en)
 
-- FORMAT을 사용하여 그룹 생성
+### FORMAT을 사용하여 그룹 생성
 ```
 libname proclib 'SAS-library';
 options fmtsearch=(proclib);
@@ -494,7 +494,7 @@ run;
 ```
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex11.png?locale=en)
 
-- 다중 레이블 형식 사용
+### 다중 레이블 형식 사용
 ```
 proc format;
   value agelfmt (multilabel notsorted)
@@ -522,6 +522,5 @@ proc report data=sashelp.class;
    define weight / mean format=6.2 'Weight (lbs.)';
 run;
 ```
-- `proc format`으로 다중레이블 지정 후 `proc report` `define`의 `group`에서 다중레이블 지정
-
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex13.png?locale=en)
+- `proc format`으로 다중레이블 지정 후 `proc report` `define`의 `group`에서 다중레이블 지정
