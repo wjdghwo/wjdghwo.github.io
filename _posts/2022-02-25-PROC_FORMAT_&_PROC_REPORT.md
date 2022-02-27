@@ -523,4 +523,5 @@ proc report data=sashelp.class;
 run;
 ```
 - `proc format`으로 다중레이블 지정 후 `proc report` `define`의 `group`에서 다중레이블 지정
+
 ![](https://documentation.sas.com/api/docsets/proc/9.4/content/images/report_ex13.png?locale=en)
